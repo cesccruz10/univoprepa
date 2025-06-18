@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admision</title>
+    <link rel="icon" href="img/img/GEU2030-50.png" type="image/png"> <!-- Favicon -->
+    <link rel="stylesheet" href="css/style_admision.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="img/img/logo_prepa.png" alt="Logo" />
+                </a>
+            </div>
+            <div class="menu-toggle">
+                <i class="fas fa-bars menu-toggle-icon"></i>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                    <li class="dropdown">
+                        <a href="#"><i class="fas fa-book"></i> Nosotros</a>
+                        <ul class="submenu">
+                            <li><a href="Historia.html"><i class="fas fa-history"></i> Historia</a></li>
+                            <li><a href="Mision_Vision.html"><i class="fas fa-lightbulb"></i> Misión</a></li>
+                            <li><a href="Objetivo.html"><i class="fas fa-bullseye"></i> Objetivo</a></li>
+                            <li><a href="Decalogo.html"><i class="fas fa-heart"></i> Decálogo</a></li>
+                            <li><a href="Directorio.html"><i class="fas fa-user-tie"></i> Directorio</a></li>
+                            <li><a href="Galeria.html"><i class="fas fa-camera"></i> Galería</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="Admision.html"><i class="fas fa-home"></i>Admisión</a></li>
+                    <li class="dropdown">
+                        <a href="#"><i class="fas fa-graduation-cap"></i>Área Académica</a>
+                        <ul class="submenu">
+                            <li><a href="Plan_estudios.html"><i class="fas fa-list-alt"></i> Plan de estudios Sistema
+                                    Escolarizado</a></li>
+                            <li><a href="Plan_estudios_Mixto.html"><i class="fas fa-list-alt"></i> Plan de estudios
+                                    Sistema Mixto</a></li>
+                            <li><a href="Clubes.html"><i class="fas fa-users"></i> Club's</a></li>
+                            <li><a href="Programas_ad.html"><i class="fas fa-user-check"></i> Programas Adicionales</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#"><i class="fas fa-school"></i> Servicios</a>
+                        <ul class="submenu">
+                            <li><a href="Servicios.html"><i class="fas fa-hand-holding-heart"></i> Servicios</a></li>
+
+                            <li class="dropdown">
+                                <a href="#"><i class="fas fa-graduation-cap"></i>Becas<i
+                                        class="fas fa-angle-right"></i></a>
+                                <ul class="submenu submenu-nivel-2">
+                                    <li><a href="#">Tipos de becas</a></li>
+                                    <li><a href="#">Convocatoria</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="dropdown">
+                                <a href="#"><i class="fas fa-graduation-cap"></i>Vinculación<i
+                                        class="fas fa-angle-right"></i></a>
+                                <ul class="submenu submenu-nivel-2">
+                                    <li><a href="#">Educación cotidiana</a></li>
+                                    <li><a href="#">Convenios</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                    <li class="dropdown">
+                        <a href="#"><i class="fas fa-unlock"></i>Accesos</a>
+                        <ul class="submenu">
+                            <li class="dropdown">
+                                <a href="#"><i class="fas fa-user-graduate"></i>SISE <i
+                                        class="fas fa-angle-right"></i></a>
+                                <ul class="submenu submenu-nivel-2">
+                                    <li><a href="https://sise.univo.edu.mx/SISEWEB/WebBach/Autenticacion.php"
+                                            target="_blank">Alumnos</a></li>
+                                    <li><a href="https://sise.univo.edu.mx/WEB2/SISE/WebDocentes/"
+                                            target="_blank">Docentes UNIVO</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fwww.google.com%2F&dsh=S386640387%3A1747163369708683&ec=futura_exp_og_so_72776762_e&flowEntry=ServiceLogin&flowName=GlifWebSignIn&hl=es&ifkv=ASKV5Mj3yNoU58pn3MsQMH4ERq_7RCoOrwT6i_ayp4Sf9IytJhcxicNUs_OFEd2TfiQbo1zh6q3oiA"
+                                    target="_blank"><i class="fas fa-envelope"></i> Correo</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="Contacto.html"><i class="fas fa-envelope-open-text"></i> Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="logoGEU">
+                <a href="https://www.univo.edu.mx/web/index.php">
+                    <img src="img/img/GEU2030-50.png" alt="LogoGEU" />
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="admision-container">
+        <div class="tabs">
+            <button class="tab active" onclick="mostrarSistema('escolarizado')">
+                <i class="fas fa-school"></i> Sistema Escolarizado
+            </button>
+            <button class="tab" onclick="mostrarSistema('mixto')">
+                <i class="fas fa-calendar-alt"></i> Sistema Mixto
+            </button>
+        </div>
+
+        <!-- Contenido Escolarizado -->
+        <div id="escolarizado" class="sistema-content">
+            <h2 class="titulo-sistema">Sistema Escolarizado</h2>
+            <h3 class="subtitulo-sistema">CLAVE: 30PBH0423T</h3>
+            <h3 class="subtitulo-sistema">Acuerdo No. 001282 de fecha 30 de junio de 1995.</h3>
+
+            <h4 class="seccion-sistema">Requisitos:</h4>
+            <ul class="lista-escolarizado">
+                <li><i class="fas fa-clipboard-list"></i> Solicitud de Ficha para Examen de Admisión a partir de MARZO
+                    (Previa solicitud de ficha).</li>
+                <li><i class="fas fa-file-pdf"></i> <strong><a
+                            href="https://bachillerato.univo.edu.mx/admision/img/INGRESO23-1EXAMENESDEADMISION.pdf"
+                            target="_blank">Consulta fechas
+                            de examen de diagnóstico aquí</a></strong></li>
+            </ul>
+
+            <h4 class="seccion-sistema">Horario de atención:</h4>
+            <ul class="lista-escolarizado">
+                <li><i class="fas fa-clock"></i> Lunes a Viernes de 8:00 a 15:00 hrs.</li>
+                <li><i class="fas fa-clock"></i> Sábados de 10:00 a 14:00 hrs.</li>
+            </ul>
+
+            <h4 class="seccion-sistema">Documentos:</h4>
+            <ul class="lista-escolarizado">
+                <li><i class="fas fa-file-alt"></i> Fotocopia del Acta de Nacimiento Certificada.</li>
+                <li><i class="fas fa-id-card"></i> CURP.</li>
+                <li><i class="fas fa-file-contract"></i> Constancia de Estudios con Calificaciones de Secundaria y/o
+                    última boleta.</li>
+            </ul>
+
+            <h4 class="seccion-sistema">Aplicación de Examen:</h4>
+            <ul class="lista-escolarizado">
+                <li><i class="fas fa-calendar-day"></i> A partir de Marzo (Previa solicitud de ficha).</li>
+                <li><i class="fas fa-info-circle"></i> Los resultados del examen y proceso de ingreso se proporcionan al
+                    siguiente día hábil después de la aplicación en el Departamento de Comunicación Social.</li>
+                <li><i class="fas fa-money-bill-wave"></i> Ficha y Examen de Admisión sin costo.</li>
+            </ul>
+        </div>
+
+        <!-- Contenido Mixto -->
+        <div id="mixto" class="sistema-content hidden">
+            <h2 class="titulo-sistema">Sistema Mixto</h2>
+            <h3 class="subtitulo-sistema">CLAVE: 30PBH0506B</h3>
+            <h3 class="subtitulo-sistema">Acuerdo No. EMS 003/2002 de Fecha 02 / Mayo / 2002.</h3>
+
+            <p><strong>No se presenta examen de admisión.</strong> Fichas a partir de febrero de 2022 en el Departamento
+                de Comunicación Social</p>
+
+            <h4 class="seccion-sistema">Horario de atención:</h4>
+            <ul class="lista-escolarizado">
+                <li><i class="fas fa-clock"></i> Lunes a Viernes de 8:00 a 16:00 hrs.</li>
+                <li><i class="fas fa-clock"></i> Sábados de 10:00 a 13:00 hrs.</li>
+            </ul>
+
+            <h4 class="seccion-sistema">Documentos:</h4>
+            <h3 class="seccion-sistema">Original y 5 copias de:</h3>
+            <ul class="lista-escolarizado">
+                <li><i class="fas fa-file-alt"></i> Acta de Nacimiento Certificada</li>
+                <li><i class="fas fa-id-card"></i> CURP</li>
+                <li><i class="fas fa-certificate"></i> Certificado de Secundaria</li>
+                <li><i class="fas fa-heartbeat"></i> Grupo sanguíneo</li>
+                <li><i class="fas fa-camera"></i> 12 Fotografías tamaño infantil (blanco y negro, camisa y fondo blanco,
+                    no instantáneas, papel mate, rostro descubierto sin accesorios ni maquillaje)</li>
+                <li><i class="fas fa-dollar-sign"></i> Cubrir arancel de inscripción</li>
+            </ul>
+
+            <h4 class="seccion-sistema">Horario de clases:</h4>
+            <ul class="lista-escolarizado">
+                <li><i class="fas fa-calendar-alt"></i> Sábados de 16:00 a 20:00 hrs.</li>
+                <li><i class="fas fa-adjust"></i> Horarios flexibles.</li>
+            </ul>
+
+            <div class="mixto-imagen-container">
+                <img src="img/img/cartelBachMixto.jpg" alt="Sistema Mixto Información" class="mixto-imagen">
+            </div>
+        </div>
+    </main>
+
+
+    <script>
+        function mostrarSistema(sistema) {
+            const tabs = document.querySelectorAll(".tab");
+            tabs.forEach(tab => tab.classList.remove("active"));
+
+            const contenidos = document.querySelectorAll(".sistema-content");
+            contenidos.forEach(c => c.classList.add("hidden"));
+
+            document.getElementById(sistema).classList.remove("hidden");
+
+            if (sistema === "escolarizado") {
+                tabs[0].classList.add("active");
+            } else {
+                tabs[1].classList.add("active");
+            }
+        }
+    </script>
+
+    <footer>
+        <div class="footer-content">
+            <p>© 2025 GEU - Todos los derechos reservados</p>
+
+            <div class="social-media">
+                <a href="https://www.facebook.com/GrupoEducativoUniVO" target="_blank"><img
+                        src="img/logo_redes_sociales/facebook.svg" alt="Facebook GEU" /></a>
+                <a href="https://www.instagram.com/grupounivo/" target="_blank"><img
+                        src="img/logo_redes_sociales/instagram.svg" alt="Instagram GEU" /></a>
+                <a href="https://www.youtube.com/@univoTVmedios" target="_blank"><img
+                        src="img/logo_redes_sociales/youtube.svg" alt="YouTube GEU" /></a>
+                <a href="https://www.tiktok.com/@grupoeducativounivo" target="_blank"><img
+                        src="img/logo_redes_sociales/tiktok.svg" alt="TikTok GEU" /></a>
+                <a href="https://open.spotify.com/playlist/1X9N2q7rARf3oiT1YAEVHH?si=e29445117f064c69&utm_medium=share&utm_source=linktree&nd=1&dlsi=fbb73827983b4277"
+                    target="_blank"><img src="img/logo_redes_sociales/spotify.svg" alt="Spotify GEU" /></a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="qr-container" id="qrContainer">
+        <img src="img/img/univo_qr.png" alt="QR Escuela GEU" id="qrImage">
+    </div>
+
+    <button id="qrToggleBtn" class="qr-toggle-btn" style="display: none;">
+        <i class="fas fa-qrcode"></i>
+    </button>
+
+    <script src="js/scripts_admision.js"></script>
+</body>
+
+</html>
