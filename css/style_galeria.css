@@ -1,0 +1,1006 @@
+/*COLORES*/
+:root {
+    --color-azul: #0056b3;
+    --color-blanco: #ffffff;
+    --color-purpura: #6a0dad;
+    --color-gris-claro: #f2f2f2;
+    --color-gris-oscuro: #333;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: url('../img/img/pics/IMG_4908.JPG') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.hero {
+    margin-top: 80px;
+}
+
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* HEADER*/
+header {
+    background: rgb(255, 255, 255);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    position: fixed;
+    width: 98%;
+    max-width: 1400px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 10px;
+    border-radius: 50px 50px 50px 50px;
+    z-index: 1000;
+    padding: 0.8rem 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    height: 60px;
+}
+
+.logo img {
+    height: 70px;
+    width: 350px;
+}
+
+/*LOGO GEU*/
+.logoGEU {
+    position: absolute;
+    top: 10px;  /* Flota por encima del header */
+    left: 20px;  /* Puedes ajustar la posición horizontal */
+    z-index: 1100; /* Más alto que el header */
+}
+
+.logoGEU img {
+    max-width: 100px;
+    width: 100%;
+    height: 70px;
+    transition: transform 0.3s ease;
+    object-fit: contain;
+}
+
+.logoGEU img:hover {
+    transform: scale(1.1);
+}
+
+/*QR CODE*/
+
+.qr-container {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 150px;
+    height: 190px;
+    background: linear-gradient(145deg, #e1cbfe, #6704b84b);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border: 2px solid #9900ff;
+    z-index: 1000;
+    overflow: hidden;
+    transform: scale(1);
+    transform-origin: bottom right;
+    /* punto de origen fijo */
+    transition: transform 0.5s ease-in-out;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+
+    30% {
+        transform: translateY(-4px);
+    }
+
+    50% {
+        transform: translateY(3px);
+    }
+
+    70% {
+        transform: translateY(-3px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.qr-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transform: scaleX(1.2);
+}
+
+.qr-container.hide {
+    transform: scale(0);
+    /* Hace que el QR se oculte */
+    transform-origin: bottom right;
+    /* Asegura que el punto de escalado esté en la esquina inferior derecha */
+}
+
+.qr-toggle-btn {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    background-color: #07223d;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.qr-toggle-btn:hover {
+    background: #7a00cc;
+}
+
+@keyframes showQR {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.qr-container.show {
+    transform: scale(1);
+    /* Muestra el QR */
+    transform-origin: bottom right;
+    /* Asegura que el punto de escalado esté en la esquina inferior derecha */
+}
+
+
+/*----------------------------------------INICIO MENÚ--------------------------------*/
+
+#menuToggle {
+    display: none
+}
+
+.menu-toggle-icon {
+    font-size: 20px;
+    background: rgb(7, 34, 61);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+#qrContainer {
+    display: block;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0 20px; /* Espaciado interior horizontal */
+    margin: 0;
+    background: rgb(7, 34, 61);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between; /* Distribuye uniformemente */
+    align-items: center;
+    flex-wrap: nowrap;              /* 🔑 No permite salto de línea */
+    gap: 18px;
+    width: 100%;                    /* 🔑 Que se ajuste al header */
+}
+
+/*ENLACES*/
+nav ul li {
+    position: relative;
+    font-size: 1.2rem;
+}
+
+/* TEXTO MENU*/
+nav ul li a {
+    text-decoration: none;
+    white-space: nowrap; /* 🔑 Evita que se rompan en varias líneas */
+    font-size: 14px;      /* Puedes subirlo un poco si era demasiado pequeño */
+    font-family: 'Shadows Into Light', cursive;
+    color: #ffffff;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    background: rgb(7, 34, 61);
+}
+
+/* LIGHTBOX  NR*/
+
+.lightbox {
+    position: absolute; /* antes: fixed */
+    top: 0; /* se actualizará dinámicamente */
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    z-index: 9999;
+}
+
+.lightbox.open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.lightbox-img {
+    max-width: 90vw;
+    max-height: 85vh;
+    border-radius: 12px;
+    box-shadow: none;
+    background-color: #fff;
+    padding: 8px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    user-select: none;
+}
+
+/* Botón cerrar */
+.lightbox .close {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    font-size: 28px;
+    color: #fff;
+    background: transparent;
+    cursor: pointer;
+    border: none;
+    transition: color 0.25s ease;
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    user-select: none;
+    z-index: 10000;
+}
+
+.lightbox .close:hover {
+    color: #bbb;
+}
+
+/* Botones de navegación */
+.nav-btn {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 28px;
+    color: #fff;
+    background: rgba(255 255 255 / 0.1);
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    user-select: none;
+    border: none;
+    transition: background 0.3s ease, color 0.3s ease;
+    z-index: 10000;
+}
+
+.nav-btn:hover {
+    background: rgba(255 255 255 / 0.3);
+    color: #eee;
+}
+
+.nav-btn.prev {
+    left: 15px;
+}
+
+.nav-btn.next {
+    right: 15px;
+}
+
+/* Indicadores puntos */
+.dots-container {
+    position: fixed;
+    bottom: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    z-index: 10000;
+}
+
+.dots-container .dot {
+    width: 10px;
+    height: 10px;
+    background-color: #81017fc7;
+    border-radius: 50%;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+.dots-container .dot.active {
+    background-color: #07223d;
+    transform: scale(1.3);
+}
+
+.lightbox {
+    align-items: flex-start;
+    /* Empieza desde arriba en lugar de centro total */
+    padding-top: 40px;
+    /* Espacio arriba */
+    padding-bottom: 40px;
+    /* Espacio abajo */
+}
+
+.lightbox-img {
+    max-height: 70vh;
+    /* Reduce altura máxima en móviles */
+    width: auto;
+    margin: 0 auto;
+}
+
+.lightbox .close {
+    top: 10px;
+    right: 10px;
+}
+
+.dots-container {
+    bottom: 20px;
+}
+
+/*SUBMENUS*/
+
+.submenu {
+    position: absolute;
+    margin-top: -1px;
+    top: 100%;
+    left: 0;
+    background: rgb(7, 34, 61);  /* Conserva tu color original */
+    border-radius: 10px;
+    width: max-content;         /* 🔑 Se adapta al contenido más largo */
+    opacity: 0;
+    visibility: hidden;
+    transition: none 0.5s ease;
+    z-index: 1001;
+}
+
+.submenu li a {
+    white-space: nowrap;      
+    display: block;
+    padding: 10px 20px;
+    color: white;             
+    text-decoration: none;
+}
+
+.submenu-nivel-2 {
+    top: 0;
+    left: 100%;
+    margin-left: -1px;
+    background: rgb(7, 34, 61);
+}
+
+nav ul li:hover>.submenu,
+nav ul li .submenu:hover {
+    opacity: 1;
+    visibility: visible;
+}
+
+.submenu li:hover>.submenu-nivel-2,
+.submenu-nivel-2:hover {
+    opacity: 1;
+    visibility: visible;
+}
+
+/*FLECHAS*/
+
+.fa-angle-right {
+    font-size: 18px; 
+}
+
+/* Estilo para los enlaces con flecha */
+.submenu li > a {
+    position: relative;
+    display: block;
+    padding: 10px 40px 10px 20px;  
+    color: white;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.submenu .dropdown > a {
+    position: relative;
+    display: block;
+    padding: 10px 40px 10px 20px; /* Aumenta padding a la derecha */
+    white-space: nowrap;
+    color: white;
+    text-decoration: none;
+}
+
+.submenu .dropdown > a > .fa-graduation-cap {
+    margin-right: 8px;
+}
+
+
+.submenu .dropdown > a > .fa-angle-right {
+    position: absolute;
+    right: 15px;                  /* Puedes ajustar más o menos */
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 12px;              /* Tamaño reducido si lo deseas */
+    pointer-events: none;         /* Para evitar que bloquee clics */
+}
+
+/* Flecha posicionada al extremo derecho */
+.dropdown > a > .fa-angle-right,
+.submenu .dropdown > a > .fa-angle-right {
+    position: absolute;
+    right: 15px;                    
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s;
+}
+
+/* Rotación de la flecha al hacer hover */
+.submenu .dropdown:hover > a > .fa-angle-right {
+    transform: translateY(-50%) rotate(90deg);
+}
+
+.dropdown>a>.fa-angle-right {
+    margin-left: auto;
+    transition: transform 0.3s;
+}
+
+.dropdown:hover>a>.fa-angle-right {
+    transform: rotate(90deg);
+}
+
+.submenu li {
+    padding: 10px;
+}
+
+.submenu .submenu {
+    top: 0;
+    left: 100%;
+    background-color: rgb(7, 34, 61);
+    border-radius: 8px;
+    margin-left: 0px;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease-in-out, max-height 0.3s ease-in-out;
+    z-index: 999;
+}
+
+.submenu li:hover>.submenu {
+    opacity: 1;
+    max-height: 500px;
+    visibility: visible;
+}
+
+.dropdown:hover .submenu {
+    max-height: 18.75rem;
+    opacity: 1;
+}
+
+.submenu li {
+    padding: 5px 0;
+}
+
+
+i {
+    font-size: 20px;
+    color: #ffffff;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    position: relative;
+}
+
+nav a {
+    display: block;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+}
+
+nav .dropdown {
+    position: relative;
+}
+
+nav .dropdown:hover>.submenu {
+    visibility: visible;
+    opacity: 1;
+    max-height: 500px;
+    transform: translateY(0);
+}
+
+nav i {
+    transition: transform 0.3s;
+}
+
+nav i:hover {
+    transform: scale(1.2);
+}
+
+nav .submenu li {
+    padding: 10px;
+}
+
+nav .submenu li a {
+    color: white;
+    padding: 10px 20px;
+}
+
+nav .submenu li a:hover {
+    background-color: rgb(104, 17, 180);
+    color: rgb(255, 255, 255);
+}
+
+nav ul li:hover .submenu {
+    display: block;
+}
+
+/*--------------------------------FIN MENU------------------------------*/
+
+/* GALERIA*/
+
+main.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 40px;
+    background: rgba(7, 34, 61, 0.67);
+    /* igual que historia-container */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.35);
+    /* igual que historia */
+    max-width: 1200px;
+    width: 90%;
+    margin: 110px auto;
+    z-index: 1;
+    position: relative;
+    text-align: center;
+}
+
+.card {
+    background-color: #ffffffc9;
+    /* fondo claro similar al de historia-content */
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    /* igual a historia-content */
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    padding: 15px;
+    position: relative;
+    z-index: 1;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card img:hover {
+    transform: scale(1.05);
+}
+
+.card p {
+    padding: 15px;
+    font-size: 20px;
+    font-family: 'Shadows Into Light', cursive;
+    font-weight: 400;
+    color: #07223d;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+    line-height: 1.7;
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+/* Títulos y subtítulos consistentes */
+.card h3 {
+    color: #3e006f;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    margin-top: 10px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    main.galeria {
+        padding: 20px;
+        gap: 15px;
+    }
+
+    .card img {
+        height: 180px;
+    }
+
+    .card p {
+        font-size: 18px;
+    }
+}
+
+
+/*FOOTER*/
+footer {
+    background: rgb(7, 34, 61);
+    max-width: 400px;
+    width: 100%;
+    height: 90px;
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
+    color: var(--color-blanco);
+    text-align: center;
+    padding: 1rem 0;
+    margin: -4rem auto 0;
+    border-radius: 50px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+
+.footer-content p,
+.footer-content a,
+.footer-content span {
+    color: #ffffff;
+    text-shadow: none;
+    font-family: 'Shadows Into Light', cursive;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1px;
+    flex-wrap: wrap;
+    padding: 0 20px;
+}
+
+.footer-content p {
+    font-size: 14px;
+}
+
+.social-media {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.social-media a img {
+    width: 30px;
+    height: 30px;
+    filter: brightness(0) invert(1);
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.social-media a img:hover {
+    transform: scale(1.2);
+}
+
+
+/*BOTON*/
+.btn {
+    display: inline-block;
+    background-color: var(--color-purpura);
+    color: var(--color-blanco);
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #07223d;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+/* DISEÑO RESPONSIVO */
+@media (max-width: 768px) {
+
+    /* Cambia el layout del header a columna y centra el texto */
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* Oculta el menú de navegación y lo posiciona hacia la izquierda */
+    nav ul {
+        flex-direction: column;
+        display: none;
+        /* Oculta por defecto */
+        position: relative;
+        left: -100px;
+        /* Mueve el menú hacia la izquierda */
+        width: calc(100% + 20px);
+        /* Aumenta el ancho para compensar el desplazamiento */
+        padding-left: 20px;
+        /* Agrega espacio a la izquierda para el texto */
+        box-sizing: border-box;
+    }
+
+    /* Estilos cuando el menú está abierto (por ejemplo, con una clase "open") */
+    nav ul.open {
+        display: flex;
+        /* Muestra el menú */
+        flex-direction: column;
+        opacity: 1;
+        transform: translateY(0);
+        /* Sin desplazamiento vertical */
+        transition: opacity 0.5s ease, transform 0.5s ease;
+        /* Transiciones suaves */
+    }
+
+    /* Espaciado entre elementos del menú y alinea texto a la izquierda */
+    nav ul li {
+        margin: 10px 0;
+        text-align: left;
+    }
+
+    /* Ajustes para los submenús en vista móvil */
+    nav ul ul {
+        left: 0;
+        margin-left: 10px;
+        /* Desplaza ligeramente los submenús */
+    }
+
+    /* Muestra el botón para abrir/cerrar el menú en móviles */
+    .menu-toggle {
+        display: block;
+        align-self: flex-start;
+        /* Alinea a la izquierda */
+        margin-top: -35px;
+        margin-left: 10px;
+    }
+
+    /* Estilo del ícono del botón de menú */
+    .menu-toggle-icon {
+        font-size: 30px;
+        background-color: #07223d;
+        /* Gradiente de color */
+        -webkit-background-clip: text;
+        /* Aplica el gradiente solo al texto */
+    }
+
+    /* Rota el ícono cuando el menú está abierto */
+    .menu-toggle.open {
+        transform: rotate(90deg);
+        transition: transform 0.3s ease;
+    }
+
+    /* Cambia el ícono (por ejemplo, a una X) cuando el menú está abierto */
+    .menu-toggle.open i::before {
+        content: "\f00d";
+        /* Ícono "X" de Font Awesome */
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+    }
+
+    /* Estilo del footer en móviles */
+    footer {
+        width: 95%;
+        border-radius: 80px;
+        /* Bordes redondeados */
+    }
+
+    /* Cambia el layout del contenido del footer a columna */
+    .footer-content {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* Estilo base de los submenús */
+    .submenu {
+        position: absolute;
+        margin-top: -1px;
+        top: 100%;
+        /* Aparece justo debajo del elemento padre */
+        left: 0;
+        background-color: #07223d;
+        /* Fondo degradado */
+        border-radius: 10px;
+        width: 170px;
+        opacity: 0;
+        /* Oculto por defecto */
+        visibility: hidden;
+        /* No visible */
+        transition: none 0.5s ease;
+        /* Sin transición en este breakpoint */
+        z-index: 1001;
+    }
+
+    /* Submenú de segundo nivel (submenu dentro de otro submenu) */
+    .submenu-nivel-2 {
+        top: 0;
+        left: 100%;
+        /* Se posiciona a la derecha del submenu padre */
+        margin-left: -1px;
+        background-color: #07223d;
+        /* Otro degradado */
+    }
+
+    /* Estilo del texto de los ítems del menú */
+    nav ul li a {
+        text-decoration: none;
+        font-size: 13px;
+        font-family: 'Shadows Into Light', cursive;
+        /* Fuente manuscrita */
+        color: #ffffff;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        /* Transición suave al interactuar */
+    }
+
+    .logo {
+        height: 50px;
+    }
+
+    .logo img {
+        height: 60px;
+        width: 250px;
+        margin-left: 80px;
+    }
+
+    /*LOGO GEU*/
+    .logoGEU {
+        display: none;
+    }
+
+    /*FOOTER*/
+    .footer-content p {
+        font-size: 14px;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    /*TEXTO MENU*/
+    nav ul li a {
+        font-size: 14px;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    /*TEXTO CONTAINER*/
+    p,
+    span,
+    li,
+    a {
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+        font-family: 'Roboto', sans-serif;
+        font-size: 18px;
+        line-height: 1.5;
+    }
+
+ /* LIGHTBOX RESPONSIVE */
+.lightbox {
+    align-items: flex-start;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    overflow-y: auto; /* permite desplazarse si la imagen es muy alta */
+}
+
+.lightbox-img {
+    max-width: 95vw;
+    max-height: 70vh;
+    width: auto;
+    margin: 0 auto;
+}
+
+/* Botón cerrar */
+.lightbox .close {
+    width: 40px;
+    height: 40px;
+    background: rgba(7, 34, 61, 0.8);
+    color: #ffffff;
+    border-radius: 50%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    border: 2px solid #fe29fa95;
+    top: 10px;
+    right: 10px;
+    position: fixed;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.lightbox .close:hover {
+    background: rgba(7, 34, 61, 0.8);
+    color: #fff;
+}
+
+/* Botones de navegación */
+.nav-btn {
+    background: rgba(7, 34, 61, 0.8); /* Color oscuro sólido con transparencia */
+    color: #ffffff;
+    padding: 10px 14px;
+    font-size: 24px;
+    border: 2px solid #fe29fa95;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.nav-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+/* Indicadores */
+.dots-container {
+    bottom: 20px;
+}
+
+}
